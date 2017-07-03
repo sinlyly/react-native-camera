@@ -291,7 +291,7 @@ public class RCTCameraModule extends ReactContextBaseJavaModule
         mMediaRecorder.setProfile(cm);
         
         //begin --   update by sin  setVideoEncodingBitRate
-        if(options.getInt("bitRate") > 0 ){
+        if(options.hasKey("bitRate") && options.getInt("bitRate") > 0 ){
             mMediaRecorder.setVideoEncodingBitRate(options.getInt("bitRate") * 1024);
         }
         // end --  update  by sin
