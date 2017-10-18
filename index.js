@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import {
   DeviceEventEmitter, // android
   NativeAppEventEmitter, // ios
@@ -69,53 +70,6 @@ export default class Camera extends Component {
     Orientation: CameraManager.Orientation,
     FlashMode: CameraManager.FlashMode,
     TorchMode: CameraManager.TorchMode
-  };
-
-  static propTypes = {
-    ...ViewPropTypes,
-    aspect: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number
-    ]),
-    captureAudio: PropTypes.bool,
-    captureMode: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number
-    ]),
-    captureQuality: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number
-    ]),
-    captureTarget: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number
-    ]),
-    defaultOnFocusComponent: PropTypes.bool,
-    flashMode: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number
-    ]),
-    keepAwake: PropTypes.bool,
-    onBarCodeRead: PropTypes.func,
-    barcodeScannerEnabled: PropTypes.bool,
-    onFocusChanged: PropTypes.func,
-    onZoomChanged: PropTypes.func,
-    mirrorImage: PropTypes.bool,
-    fixOrientation: PropTypes.bool,
-    barCodeTypes: PropTypes.array,
-    orientation: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number
-    ]),
-    playSoundOnCapture: PropTypes.bool,
-    torchMode: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number
-    ]),
-    type: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number
-    ])
   };
 
   static defaultProps = {
@@ -256,7 +210,54 @@ export default class Camera extends Component {
     }
     return CameraManager.hasFlash();
   }
-}
+};
+
+Camera.propTypes = {
+    ...ViewPropTypes,
+    aspect: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number
+    ]),
+    captureAudio: PropTypes.bool,
+    captureMode: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number
+    ]),
+    captureQuality: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number
+    ]),
+    captureTarget: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number
+    ]),
+    defaultOnFocusComponent: PropTypes.bool,
+    flashMode: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number
+    ]),
+    keepAwake: PropTypes.bool,
+    onBarCodeRead: PropTypes.func,
+    barcodeScannerEnabled: PropTypes.bool,
+    onFocusChanged: PropTypes.func,
+    onZoomChanged: PropTypes.func,
+    mirrorImage: PropTypes.bool,
+    fixOrientation: PropTypes.bool,
+    barCodeTypes: PropTypes.array,
+    orientation: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number
+    ]),
+    playSoundOnCapture: PropTypes.bool,
+    torchMode: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number
+    ]),
+    type: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number
+    ])
+  };
 
 export const constants = Camera.constants;
 
